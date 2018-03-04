@@ -1,6 +1,7 @@
 package com.jzheadley.polipoll.server.models
 
 import java.sql.Date
+import java.util.*
 import javax.persistence.*
 
 @Entity
@@ -8,7 +9,7 @@ import javax.persistence.*
 data class User(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        val userId: String,
+        val userId: String = UUID.randomUUID().toString(),
         val name: String = "",
         val dob: Date = Date(-1),
         val race: String = "",
