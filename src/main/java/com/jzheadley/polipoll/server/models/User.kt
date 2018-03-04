@@ -8,7 +8,6 @@ import javax.persistence.*
 @Table(name = "User")
 data class User(
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
         val userId: String = UUID.randomUUID().toString(),
         val name: String = "",
         val dob: Date = Date(-1),
