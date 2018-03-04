@@ -143,6 +143,7 @@
                 <configuration>
                     <compilerPlugins>
                         <plugin>jpa</plugin>
+                        <plugin>no-arg</plugin>
                     </compilerPlugins>
                 </configuration>
 
