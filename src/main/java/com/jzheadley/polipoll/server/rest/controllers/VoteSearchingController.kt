@@ -17,7 +17,7 @@ class VoteSearchingController(private val voteRepo: VoteRepository, private val 
         var gson: Gson = GsonBuilder().create()
         return ResponseEntity.ok(gson.toJson("{" +
                 "yes:" + numYes +
-                " no:" + numNo +
+                ", no:" + numNo +
                 "}"))
     }
 
