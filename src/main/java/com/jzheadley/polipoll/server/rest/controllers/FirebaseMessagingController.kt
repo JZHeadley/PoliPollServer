@@ -11,6 +11,7 @@ import de.bytefish.fcmjava.responses.FcmMessageResponse
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import java.time.Duration
+import java.util.*
 
 @RestController
 class FirebaseMessagingController(private val messagingIdRepo: MessagingIdRepository, private val fcmClient: FcmClient) {
@@ -22,7 +23,7 @@ class FirebaseMessagingController(private val messagingIdRepo: MessagingIdReposi
 
     @GetMapping("test/messagingIds/send")
     fun testNotificationSending() {
-        sendNotifsOfCheckInToFollowersOfUser(Bill(15, "Could Florida had a law allowing authorities to confiscate weapons from people",
+        sendNotifsOfCheckInToFollowersOfUser(Bill(Random().nextInt(Math.pow(2.0, 32.0).toInt() - 1).toLong(), "Could Florida had a law allowing authorities to confiscate weapons from people",
                 "https://www.gpo.gov/fdsys/pkg/BILLS-115hr2598ih/pdf/BILLS-115hr2598ih.pdf"))
     }
 
