@@ -1,6 +1,7 @@
 package com.jzheadley.polipoll.server.rest.controllers
 
 import com.jzheadley.polipoll.server.models.Bill
+import com.jzheadley.polipoll.server.models.payloads.BillPayload
 import com.jzheadley.polipoll.server.repositories.MessagingIdRepository
 import de.bytefish.fcmjava.client.FcmClient
 import de.bytefish.fcmjava.model.options.FcmMessageOptions
@@ -33,7 +34,7 @@ class FirebaseMessagingController(private val messagingIdRepo: MessagingIdReposi
         val messagingingIds: List<String?> = messagingIdRepo.findAll().map { obj -> obj.messagingId }
         val notification = DataMulticastMessage(messageOptions,
                 messagingingIds,
-                bill,
+                BillPayload(bill),
                 NotificationPayload.builder()
                         .setClickAction("BILL_ADDED_NOTIF")
                         .setBody("A new bill has been proposed!")
