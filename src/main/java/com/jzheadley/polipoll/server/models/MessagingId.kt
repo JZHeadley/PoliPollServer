@@ -6,4 +6,4 @@ import javax.persistence.Id
 @Entity
 data class MessagingId(
         @Id
-        var messagingId: String)
+        var messagingId: String? = null)
