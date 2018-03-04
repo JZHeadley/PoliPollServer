@@ -10,19 +10,19 @@ import org.springframework.stereotype.Repository
 @Repository
 interface VoteRepository : JpaRepository<Vote, Long> {
 
-    @Query(value = "SELECT COUNT(*) from vote v join user u where v.user_id = u.user_id and race like concat('%', :race,'%') and supporting=true")
+    @Query(nativeQuery = true, value = "SELECT COUNT(*) from vote v join user u where v.user_id = u.user_id and race like concat('%', :race,'%') and supporting=true")
     fun numOfYesByRace(@Param("race") race: String)
 
-    @Query(value = "SELECT COUNT(*) from vote v join user u where v.user_id = u.user_id and race like concat('%', :race,'%') and supporting=false ")
+    @Query(nativeQuery = true, value = "SELECT COUNT(*) from vote v join user u where v.user_id = u.user_id and race like concat('%', :race,'%') and supporting=false ")
     fun numOfNoByRace(@Param("race") race: String)
 
-    @Query(value = "SELECT " +
-            "  count(*)" +
+    @Query(nativeQuery = true, value = "SELECT " +
+            "  count(*) " +
             "FROM vote v" +
             "  JOIN user u" +
-            "  JOIN bill b" +
+            "  JOIN bill b " +
             "WHERE b.bill_id = v.bill_id AND v.user_id = u.user_id" +
-            "      AND race LIKE concat('%', :race', '%')" +
+            "      AND race LIKE concat('%', :race, '%')" +
             "      AND b.bill_id = :billId;")
     fun numOfYesByRaceForBill(@Param("billId") billId: Long, @Param("race") race: String)
 }
