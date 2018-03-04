@@ -22,8 +22,8 @@ class FirebaseMessagingController(private val messagingIdRepo: MessagingIdReposi
 
     @GetMapping("test/messagingIds/send")
     fun testNotificationSending() {
-        sendNotifsOfCheckInToFollowersOfUser(Bill(1, "blah this is a bill summary",
-                "https://code.tutsplus.com/tutorials/how-to-get-started-with-push-notifications-on-android--cms-25870"))
+        sendNotifsOfCheckInToFollowersOfUser(Bill(11, "Could Florida had a law allowing authorities to confiscate weapons from people",
+                "https://www.gpo.gov/fdsys/pkg/BILLS-115hr2598ih/pdf/BILLS-115hr2598ih.pdf"))
     }
 
     private fun sendNotifsOfCheckInToFollowersOfUser(bill: Bill) {
@@ -36,7 +36,7 @@ class FirebaseMessagingController(private val messagingIdRepo: MessagingIdReposi
                 BillPayload(bill),
                 NotificationPayload.builder()
                         .setClickAction("BILL_ADDED_NOTIF")
-                        .setBody("A new bill has been proposed!")
+                        .setBody("Could Florida had a law allowing authorities to confiscate weapons from people")
                         .setTitle("New Bill!")
                         .build())
         val response: FcmMessageResponse = fcmClient.send(notification)
