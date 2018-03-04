@@ -9,14 +9,14 @@ import javax.persistence.Table
 @Table(name = "User")
 data class User(
         @Id
-        val userId: String,
-        val name: String,
-        val dob: Date,
-        val race: String,
-        val gender: String,
-        val maritalStatus: String,
-        val religion: String,
-        val annHouseholdIncome: String,
-        val politicalStanding: String,
-        val numChildren: Int,
-        val sexualOrientation: String)
+        val userId: String = "",
+        val name: String = "",
+        val dob: Date = Date(-1),
+        val race: String = "",
+        val gender: String = "",
+        val maritalStatus: String = "",
+        val religion: String = "",
+        val annHouseholdIncome: String = "",
+        val politicalStanding: String = "",
+        val numChildren: Int = -1,
+        val sexualOrientation: String = "")
