@@ -1,15 +1,14 @@
 package com.jzheadley.polipoll.server.models
 
 import java.sql.Date
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "User")
 data class User(
         @Id
-        val userId: String = "",
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        val userId: String,
         val name: String = "",
         val dob: Date = Date(-1),
         val race: String = "",
