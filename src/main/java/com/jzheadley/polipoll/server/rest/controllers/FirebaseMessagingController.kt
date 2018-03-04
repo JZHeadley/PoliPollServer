@@ -21,7 +21,7 @@ class FirebaseMessagingController(private val messagingIdRepo: MessagingIdReposi
         messagingIdRepo.save(MessagingId(messagingId))
     }
 
-    @GetMapping("messagingIds/send")
+    @GetMapping("test/messagingIds/send")
     fun testNotificationSending() {
         sendNotifsOfCheckInToFollowersOfUser(Bill(1, "blah this is a bill summary", Date(1997, 7, 23),
                 "https://code.tutsplus.com/tutorials/how-to-get-started-with-push-notifications-on-android--cms-25870"))
