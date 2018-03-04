@@ -16,7 +16,7 @@ data class User(
         val gender: String,
         val maritalStatus: Enum<MaritalStatus>,
         val religion: String,
-        val annHouseholdIncome: Double,
+        val annHouseholdIncome: String,
         val politicalStanding: Enum<PoliticalStanding>,
         val numChildren: Int,
         val sexualOrientation: Enum<Sexuality>)
