@@ -8,14 +8,13 @@ import javax.persistence.*
 class Vote(
         @Id
         @GeneratedValue(strategy=GenerationType.AUTO)
-        val voteId: Long,
+        val voteId: Long?,
         @OneToOne
         @JoinColumn(name = "userId")
-        val user: User,
+        val user: User?,
         @OneToOne
         @JoinColumn(name = "billId")
-        val bill: Bill,
-        val date: Date,
-        val supporting: Boolean,
-        val comments: String) {
-}
+        val bill: Bill?,
+        val date: Date?,
+        val supporting: Boolean?,
+        val comments: String?)
