@@ -16,7 +16,7 @@ import java.time.Duration
 
 class FirebaseMessagingController(private val messagingIdRepo: MessagingIdRepository, private val fcmClient: FcmClient) {
 
-    @PostMapping("messagingId")
+    @PostMapping("messagingIds")
     fun storeMessagingId(@RequestBody messagingId: String) {
         messagingIdRepo.save(MessagingId(messagingId))
     }
