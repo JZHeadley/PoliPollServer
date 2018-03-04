@@ -31,7 +31,7 @@ class FirebaseMessagingController(private val messagingIdRepo: MessagingIdReposi
         val messageOptions = FcmMessageOptions.builder()
                 .setTimeToLive(Duration.ofHours(1))
                 .build()
-        val messagingingIds: List<String> = messagingIdRepo.findAll().map { obj -> obj.messagingId }
+        val messagingingIds: List<String?> = messagingIdRepo.findAll().map { obj -> obj.messagingId }
         val notification = DataMulticastMessage(messageOptions,
                 messagingingIds,
                 bill,
