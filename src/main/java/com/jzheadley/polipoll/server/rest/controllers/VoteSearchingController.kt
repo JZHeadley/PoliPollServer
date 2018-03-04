@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController
 class VoteSearchingController(private val voteRepo: VoteRepository, private val gson: Gson) {
     @GetMapping("votes/stats/{race}")
     fun getNumYesNoByRace(@PathVariable("race") race: String): ResponseEntity<String>? {
-        var numYes = voteRepo.numOfYesByRace(race)
-        var numNo = voteRepo.numOfNoByRace(race)
+        var numYes: Int = voteRepo.numOfYesByRace(race)
+        var numNo: Int = voteRepo.numOfNoByRace(race)
         var gson: Gson = GsonBuilder().create()
         return ResponseEntity.ok(gson.toJson("{" +
                 "yes:" + numYes +
