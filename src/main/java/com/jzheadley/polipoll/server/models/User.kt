@@ -14,9 +14,9 @@ data class User(
         val dob: Date,
         val race: String,
         val gender: String,
-        val maritalStatus: Enum<MaritalStatus>,
+        val maritalStatus: String,
         val religion: String,
         val annHouseholdIncome: String,
-        val politicalStanding: Enum<PoliticalStanding>,
+        val politicalStanding: String,
         val numChildren: Int,
-        val sexualOrientation: Enum<Sexuality>)
+        val sexualOrientation: String)
