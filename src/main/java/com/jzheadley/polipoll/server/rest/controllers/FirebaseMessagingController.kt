@@ -22,7 +22,7 @@ class FirebaseMessagingController(private val messagingIdRepo: MessagingIdReposi
 
     @GetMapping("test/messagingIds/send")
     fun testNotificationSending() {
-        sendNotifsOfCheckInToFollowersOfUser(Bill(11, "Could Florida had a law allowing authorities to confiscate weapons from people",
+        sendNotifsOfCheckInToFollowersOfUser(Bill(15, "Could Florida had a law allowing authorities to confiscate weapons from people",
                 "https://www.gpo.gov/fdsys/pkg/BILLS-115hr2598ih/pdf/BILLS-115hr2598ih.pdf"))
     }
 
